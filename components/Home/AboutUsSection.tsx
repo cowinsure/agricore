@@ -279,12 +279,12 @@ const AboutUsSection: React.FC = () => {
   }
 
   return (
-    <div ref={containerRef} className="min-h-[600px] relative">
+    <div ref={containerRef} className="lg:min-h-[600px] relative">
       <BackgroundImageLayer imageUrl="/village2.png" opacity={0.08} />
       {aboutUsData.map((item, index) => (
         <div
           key={index}
-          className="about-section-item flex flex-col lg:flex-row lg:justify-around md:flex-col w-full lg:pt-8 mt-[200px] min-[768px]:mt-[150px] lg:mt-8"
+          className="about-section-item flex flex-col lg:flex-row lg:justify-around md:flex-col w-full lg:pt-8 min-[768px]:mt-[150px] lg:mt-28"
         >
           <div
             ref={(el) => {
@@ -354,7 +354,7 @@ const AboutUsSection: React.FC = () => {
               }}
               className="space-y-3 mb-8 pt-5 pl-2 pr-2 text-[18px] text-[#334b35] tracking-normal"
             >
-              {item.extra_data.description}
+              {item.extra_data.description.replace(/Insurecow/g, "Agricore")}
             </p>
 
             <div className="flex items-center pl-2 pr-2">

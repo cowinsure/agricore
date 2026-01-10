@@ -16,7 +16,7 @@ const Footer = () => {
       {/* Left Section - Company Info */}
       <div>
         <h2 className="text-2xl font-bold text-green-800 flex items-center">
-         InsureCow
+         AgriCore
         </h2>
         <p className="mt-3 text-gray-600">
          Bangladesh Office: House 117, Road 5, Block B, Niketon, Dhaka, Bangladesh
@@ -47,7 +47,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div className='flex flex-col gap-5 mt-5'>
             <div className='mr-5'>
-               <p className="text-gray-600">info@insurecow.com</p>
+               <p className="text-gray-600">info@agricore.com</p>
         <p className="text-gray-600">+8801999INSURE</p>
             </div>
             <div>
@@ -93,7 +93,7 @@ const Footer = () => {
 
     {/* Footer Bottom Section */}
     <div className="border-t mt-10 pt-5 text-center text-gray-500 text-sm">
-      <p>Copyright © 2024 InsureCow | All Rights Reserved</p>
+      <p>Copyright © 2024 AgriCore | All Rights Reserved</p>
       <div className="flex justify-center gap-4 mt-2">
         <a href="#" className="hover:underline">Privacy Policy</a>
         <a href="#" className="hover:underline">Terms of Use</a>

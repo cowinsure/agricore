@@ -169,7 +169,12 @@ const FaqSection: React.FC = () => {
   if (isLoading) {
     return (
       <section className="faq-section relative flex flex-col justify-center items-center lg:flex-col lg:justify-center lg:items-center w-full min-h-[500px] h-auto py-10 pb-20">
-        <BackgroundImageLayer imageUrl={village.src} opacity={0.1} size="80%" position="bottom" />
+        <BackgroundImageLayer
+          imageUrl={village.src}
+          opacity={0.1}
+          size="80%"
+          position="bottom"
+        />
         <div className="container mx-auto px-4 text-center">
           <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600 ">Loading FAQs...</p>
@@ -179,8 +184,16 @@ const FaqSection: React.FC = () => {
   }
 
   return (
-    <section ref={sectionRef} className="faq-section relative h-auto py-10 pb-20">
-      <BackgroundImageLayer imageUrl={village.src} opacity={0.1} size="80%" position="bottom" />
+    <section
+      ref={sectionRef}
+      className="faq-section relative h-auto py-10 pb-20"
+    >
+      <BackgroundImageLayer
+        imageUrl={village.src}
+        opacity={0.1}
+        size="80%"
+        position="bottom"
+      />
       <div className="relative z-10 container mx-auto px-4">
         <h2
           ref={titleRef}
@@ -193,14 +206,16 @@ const FaqSection: React.FC = () => {
           {faqs.map((faq, index) => (
             <li
               key={index}
-              ref={(el) => {faqRefs.current[index] = el}}
+              ref={(el) => {
+                faqRefs.current[index] = el;
+              }}
               className="border-b border-gray-200 pb-6 opacity-0"
             >
               <button
                 className="w-full text-left text-xl lg:text-2xl font-semibold text-[#334b35] hover:text-green-700 transition-colors duration-300 flex justify-between items-center group"
                 onClick={() => toggleExpand(index)}
               >
-                <span className="pr-4">{faq.question}</span>
+                <span className="pr-4">  {faq.question.replace(/InsureCow/g, "AgriCore")}</span>
                 <span
                   className={`text-2xl transition-transform duration-300 ${
                     expandedIndex === index ? "rotate-45" : "rotate-0"
@@ -212,14 +227,16 @@ const FaqSection: React.FC = () => {
 
               <div className="overflow-hidden">
                 <p
-                  ref={(el) => {answerRefs.current[index] = el}}
-                  className="mt-4 text-lg lg:text-xl text-gray-600 leading-relaxed"
+                  ref={(el) => {
+                    answerRefs.current[index] = el;
+                  }}
+                  className="mt-4 text-lg lg:text-xl text-gray-600 leading-relaxed text-left"
                   style={{
                     height: expandedIndex === index ? "auto" : "0",
                     opacity: expandedIndex === index ? 1 : 0,
                   }}
                 >
-                  {faq.answer}
+                  {faq.answer.replace(/InsureCow/g, "AgriCore")}
                 </p>
               </div>
             </li>

@@ -35,7 +35,7 @@ function Imapct() {
       {/* <BannerGeneral bannerUrl={farmeintheway}>
         <div className="relative z-10 flex flex-row items-center justify-center h-full bg-black bg-opacity-50 text-white text-center ">
           <div className='flex flex-1 item-center  lg:justify-center lg:items-center    justify-center '>
-            <h1 className=" text-4xl lg:text-6xl font-semibold "> <span className='text-white'>InsureCow impact report </span></h1>
+            <h1 className=" text-4xl lg:text-6xl font-semibold "> <span className='text-white'>AgriCore impact report </span></h1>
           </div>
           <div className='flex flex-col item-center flex-1 lg:justify-center lg:items-center  backdrop-blur-lg bg-green-800 bg-opacity-15  h-full justify-center text-center gap-4' style={{ clipPath: 'ellipse(90% 90% at 50% 50%)' }}>
             <p className="text-lg lg:text-2xl mb-6 lg:max-w-[70vh]">Download our impact report and dive into the insights you need for your next big decision.</p>

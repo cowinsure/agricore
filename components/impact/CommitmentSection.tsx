@@ -81,7 +81,7 @@ const [commitmentData, setCommitmentData] = useState<BaseCard[]>([]);
       </div>
 
       <p className='text-center font-semibold text-gray-500 mt-10 text-2xl lg:max-w-[800px]'>
-        At InsureCow, we are dedicated to transforming agriculture by connecting investors with smallholder farmers. Together, we cultivate sustainable growth, drive food security, and uplift communities, ensuring every investment contributes to a better future for all.
+        At AgriCore, we are dedicated to transforming agriculture by connecting investors with smallholder farmers. Together, we cultivate sustainable growth, drive food security, and uplift communities, ensuring every investment contributes to a better future for all.
       </p>
 
       {commitmentData && (

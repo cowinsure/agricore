@@ -10,7 +10,7 @@ const OperatingSystems = () => {
       title: "Farm OS",
       subtitle: "Operations & Farmer Financial Intelligence",
       description:
-        "InsureCow's operational layer for managing farm activities and generating farmer-level financial intelligence. It consumes verified asset data from the cattle and crop engines and combines it with day-to-day operational information.",
+        "AgriCore's operational layer for managing farm activities and generating farmer-level financial intelligence. It consumes verified asset data from the cattle and crop engines and combines it with day-to-day operational information.",
       features: [
         "Farm inputs, expenses, and production events",
         "Livestock care activities and crop operations",
@@ -96,7 +96,7 @@ const OperatingSystems = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center text-sm text-muted-foreground mt-12 max-w-3xl mx-auto"
         >
-          InsureCow provides technology, analytics, and integration. All underwriting, 
+          AgriCore provides technology, analytics, and integration. All underwriting, 
           lending, and risk-bearing activities remain with regulated partner institutions.
         </motion.p>
       </div>

@@ -76,7 +76,7 @@ const TechnologyHero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-3xl text-lg text-primary-foreground/70 leading-relaxed"
         >
-          InsureCow operates a modular, AI-driven technology stack designed to verify 
+          AgriCore operates a modular, AI-driven technology stack designed to verify 
           agricultural assets, generate financial intelligence, and enable regulated 
           institutions to operate at scale.
         </motion.p>

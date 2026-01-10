@@ -37,7 +37,7 @@ const NavMain = () => {
       } `}
     >
       <div className="container mx-auto flex justify-center items-center lg:justify-between gap-5 ">
-        {/* <Image src={brandLogo} alt="InsureCow Logo" objectFit="cover"
+        {/* <Image src={brandLogo} alt="AgriCore Logo" objectFit="cover"
         objectPosition="bottom" height={42}  className="flex justify-center items-center " />
       <img src="https://www.insurecow.com/images/logo.png" className="flex justify-center items-center h-12" /> */}
 
@@ -46,7 +46,7 @@ const NavMain = () => {
             startCollPassed ? "text-green-800" : "text-green-800"
           }  font-extrabold`}
         >
-          InsureCow
+          AgriCore
         </h2>
 
         <ul className="flex flex-row space-x-6">
@@ -179,7 +179,7 @@ export default NavMain;
 //       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 //         {/* Logo */}
 //         <Link href="/" className="text-2xl font-extrabold text-green-800">
-//           InsureCow
+//           AgriCore
 //         </Link>
 
 //         {/* Desktop Nav */}

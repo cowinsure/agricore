@@ -124,20 +124,20 @@ function NavBarResponsive() {
             boxShadow: { duration: 1, ease: "easeOut" },
             backdropFilter: { duration: 0.4 },
           }}
-          className={`transition-all ease-in-out duration-700 mt-3
+          className={`transition-all ease-in-out duration-700
     ${
       scrolled
-        ? "max-w-[1480px] mx-auto bg-[#F6F4EC]/50 translate-y-0"
+        ? "max-w-[1480px] mx-auto bg-[#F6F4EC]/50 translate-y-0 mt-3"
         : "w-full bg-transparent"
     }
   `}
         >
-          <div className=" mx-auto px-6 h-20 flex items-center justify-between relative">
+          <div className=" mx-auto px-3 lg:px-6 h-14 lg:h-20 flex items-center justify-between relative">
             {/* Logo */}
             <div className="relative flex items-center">
               {/* SVG Blob */}
               <div
-                className={`absolute -left-5 -top-8 -z-10 w-[150px] h-[100px] bg-[#F6F4EC] skew-x-[20deg] rounded-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`absolute -left-5 -top-16 lg:-top-12 -z-10 w-[160px] h-[100px] bg-[#F6F4EC] skew-x-[20deg] rounded-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   scrolled ? "-translate-y-40" : "translate-y-0"
                 }`}
               />
@@ -145,11 +145,11 @@ function NavBarResponsive() {
               <Link href="/" className="">
                 {logoData && (
                   <Image
-                    src={logoData.image_url}
+                    src={"/AgriCore.png"}
                     alt={logoData.name}
                     width={140}
                     height={60}
-                    className="object-contain h-14 w-auto mb-4 -ml-5"
+                    className="object-contain h-6 lg:h-9 -ml-1"
                     priority
                     unoptimized
                   />
@@ -208,7 +208,7 @@ function NavBarResponsive() {
             {/* Mobile Toggle */}
             <button
               onClick={toggleNavbar}
-              className="md:hidden text-3xl font-light text-[#334b35]"
+              className={`md:hidden text-xl font-bold ${scrolled ? "text-[#334b35]" : "text-white"}`}
             >
               {isClick ? "×" : "☰"}
             </button>

@@ -188,7 +188,7 @@ const SwiperComponent = () => {
   }
 
   return (
-    <div ref={containerRef} className="relative w-full h-[100vh]">
+    <div ref={containerRef} className="relative w-full lg:h-[100vh]">
       {/* Navigation Buttons */}
       {/* <div className="absolute right-4 top-10 lg:right-16 lg:top-10 z-40 flex gap-3 lg:flex-col">
         <button
@@ -234,7 +234,7 @@ const SwiperComponent = () => {
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           modules={[EffectFade, Navigation, Pagination, Autoplay]}
-          className="w-full h-[60vh] md:h-[70vh] lg:h-[90vh] bg-black"
+          className="w-full h-[80vh] md:h-[70vh] lg:h-[90vh] bg-black"
         >
           {sliderData.map((slide, index) => (
             <SwiperSlide key={slide.id}>
@@ -292,7 +292,7 @@ const SwiperComponent = () => {
       {/* Statistics Section - Now properly responsive */}
       <div
         ref={statsRef}
-        className="relative mt-[-22] min-[768px]:mt-[-64] z-10 px-4 md:px-8 lg:px-20 opacity-0"
+        className="relative mt-[-150] lg:mt-[-22] min-[768px]:mt-[-64] z-10 px-4 md:px-8 lg:px-20 opacity-0"
       >
         <div className="bg-[#F6F4EC] rounded-lg shadow-lg overflow-hidden lg:max-w-[1450px] lg:h-40 mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 h-full">
@@ -302,7 +302,7 @@ const SwiperComponent = () => {
                 Farmers Impacted
               </h3>
               <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
-                7,500+
+                22,500+
               </p>
               {/* <small className="text-sm text-green-700/70">
                 MSME Farms and Farmers
@@ -315,7 +315,7 @@ const SwiperComponent = () => {
                 Livestock Registered
               </h3>
               <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
-                16,500+
+                22,500+
               </p>
               {/* <small className="text-sm text-green-700/70">
                 Cattle Registered

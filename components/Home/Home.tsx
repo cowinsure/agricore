@@ -29,7 +29,7 @@ import InvestmentSection from "../Helper/InvestmentSection";
 
 const Home = () => {
   // const slideTexts = [
-  //   "Welcome to InsureCow",
+  //   "Welcome to AgriCore",
   //   " Investment plans for you",
 
   //   "Easy Insurance "
@@ -37,7 +37,7 @@ const Home = () => {
 
   // const stylingHtmlText = [
   //   <h2 key="1" className=" text-white text-2xl font-bold text-center lg:text-5xl md:text-[50px] ">
-  //     Welcome to  <span className="text-green-700">InsureCow</span>
+  //     Welcome to  <span className="text-green-700">AgriCore</span>
   //   </h2>,
   //   <h2 key="2" className="text-white text-2xl md:text-4xl font-bold text-center lg:text-[80px] md:text-[50px] ">
   //     We have tailored for your  <span className="text-green-700 md:text-5xl ">Investment plans</span>
@@ -53,7 +53,7 @@ const Home = () => {
 
   // const stylingHtmlText2 = [
   //   <h2 key="1" className=" text-white text-5xl font-bold text-center lg:text-[90px] md:text-[50px] ">
-  //     Welcome to  <span className="text-white"> <br></br> InsureCow</span>
+  //     Welcome to  <span className="text-white"> <br></br> AgriCore</span>
   //   </h2>,
   //   <h2 key="2" className="text-white text-5xl font-bold text-center lg:text-[90px] md:text-[50px] ">
   //     We have tailored <span className="text-white">Investment plans</span> for you
@@ -126,7 +126,7 @@ const Home = () => {
           <div className="flex flex-1  item-center  lg:justify-center lg:items-center  justify-center ">
             <h1 className=" text-xl lg:text-6xl font-semibold text-center flex justify-center items-center ">
               {" "}
-              What Sets InsureCow Apart
+              What Sets AgriCore Apart
             </h1>
           </div>
 

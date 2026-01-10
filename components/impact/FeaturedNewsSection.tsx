@@ -181,7 +181,7 @@ const FeaturedNewsSection: React.FC = () => {
         <h1 ref={titleRef} className="text-5xl font-bold text-[#334b35]">Featured News</h1>
       </div>
       <p ref={descriptionRef} className='text-center font-semibold text-gray-500 mt-10 text-2xl lg:max-w-[800px]'>
-      InsureCow connects investors with smallholder farmers for sustainable growth and food security
+      AgriCore connects investors with smallholder farmers for sustainable growth and food security
       </p>
       <div ref={cardsContainerRef} className="w-full p-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {newsData.slice(0, visibleItems).map((news, index) => (

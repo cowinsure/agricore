@@ -5,7 +5,7 @@ const ModulerDesign = (
   <div className="relative z-10 flex flex-row items-center justify-center h-full bg-black bg-opacity-50 text-white text-center">
     <div className='flex flex-1 item-center lg:justify-center lg:items-center h-full justify-center'>
       <h1 className="text-4xl lg:text-6xl font-semibold">
-        <span className='text-white'>What Sets </span> InsureCow Apart
+        <span className='text-white'>What Sets </span> AgriCore Apart
       </h1>
     </div>
     <div className='flex flex-col item-center flex-1 lg:justify-center lg:items-center backdrop-blur-lg bg-gradient-to-r from-green-900/80 to-[#16351810] h-full justify-center text-center gap-4' style={{ clipPath: 'ellipse(90% 90% at 50% 50%)' }}>

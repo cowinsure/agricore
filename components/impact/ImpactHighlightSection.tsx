@@ -156,7 +156,7 @@ const ImpactHighlightSection: React.FC = () => {
       <section className="pt-[50vh] pb-[50vh] h-auto lg:h-auto flex flex-col lg:flex-col lg:justify-start lg:items-center items-center justify-center bg-white">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">Loading InsureCow Impact...</p>
+          <p className="text-gray-600">Loading AgriCore Impact...</p>
         </div>
       </section>
     );
@@ -171,7 +171,7 @@ const ImpactHighlightSection: React.FC = () => {
                 </div>
 
                 <h2 ref={subtitleRef} className="text-xl font-bold text-[#687469]">Impact Scoring</h2>
-                <h1 ref={titleRef} className="text-5xl font-bold text-[#334b35]">InsureCow Impact</h1>
+                <h1 ref={titleRef} className="text-5xl font-bold text-[#334b35]">AgriCore Impact</h1>
 
             </div>
 
