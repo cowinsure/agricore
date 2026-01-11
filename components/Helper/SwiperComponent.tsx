@@ -296,22 +296,11 @@ const SwiperComponent = () => {
       {/* Statistics Section - Now properly responsive */}
       <div
         ref={statsRef}
-        className="relative mt-[-70] lg:mt-[-80] min-[768px]:mt-[-64] z-10 px-4 md:px-8 lg:px-20 opacity-0"
+        className="relative mt-[-70] lg:mt-[-80] min-[768px]:mt-[-64] z-50 px-4 md:px-8 lg:px-20 opacity-0"
       >
         <div className="bg-[#F6F4EC] rounded-lg shadow-lg overflow-hidden lg:max-w-[1450px] lg:h-40 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-6 h-full">
-            {/* Farmers Impacted */}
-            <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
-              <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
-                Crop Farmers
-              </h3>
-              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
-                23,300+
-              </p>
-              {/* <small className="text-sm text-green-700/70">
-                MSME Farms and Farmers
-              </small> */}
-            </div>
+         
             {/* Farmers Impacted */}
             <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
@@ -331,10 +320,23 @@ const SwiperComponent = () => {
                 Livestock Registered
               </h3>
               <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
-                22,500+
+                24,500+
               </p>
               {/* <small className="text-sm text-green-700/70">
                 Cattle Registered
+              </small> */}
+            </div>
+
+               {/* Farmers Impacted */}
+            <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
+              <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
+                Crop Farmers
+              </h3>
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
+                23,300+
+              </p>
+              {/* <small className="text-sm text-green-700/70">
+                MSME Farms and Farmers
               </small> */}
             </div>
 

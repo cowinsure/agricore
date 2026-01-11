@@ -15,10 +15,10 @@ const Footer = () => {
       <div className=" flex flex-col justify-start lg:justify-around  lg:flex-row ">
         {/* Left Section - Company Info */}
         <div>
-          <h2 className="text-2xl font-bold text-green-800 flex items-center">
+          <h2 className=" text-2xl font-bold text-green-800 flex ">
             AgriCore
           </h2>
-          <p className="mt-3 text-gray-600">
+          <p className="text-left mt-3 text-gray-600">
             Bangladesh Office: House 117, Road 5, Block B, Niketon, Dhaka,
             Bangladesh
           </p>
@@ -65,9 +65,9 @@ const Footer = () => {
         </div>
 
         {/* Middle Section - About */}
-        <div>
-          <h3 className="text-xl font-semibold text-green-800">
-            About Company
+        <div className="text-left mt-10 lg:mt-0">
+          <h3 className=" text-xl font-semibold text-green-800">
+            <span>About Company</span>
           </h3>
           <ul className="flex flex-col items-start mt-3 space-y-2 text-gray-600">
             <li>
