@@ -54,8 +54,8 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="flex flex-col gap-5 mt-5 text-left">
             <div className="mr-5">
-              <p className="text-gray-600">info@agricore.com</p>
-              <p className="text-gray-600">+8801999INSURE</p>
+              <p className="text-gray-600">info@agricore.asia</p>
+              {/* <p className="text-gray-600">+8801999INSURE</p> */}
             </div>
             <div>
               <p className="text-gray-600">Helpline </p>
@@ -69,7 +69,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-green-800">
             About Company
           </h3>
-          <ul className="mt-3 space-y-2 text-gray-600">
+          <ul className="flex flex-col items-start mt-3 space-y-2 text-gray-600">
             <li>
               <a href="/service">Services</a>
             </li>
