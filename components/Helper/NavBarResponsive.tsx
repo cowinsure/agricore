@@ -86,7 +86,7 @@ function NavBarResponsive() {
   }, []);
 
   const capsuleSpring = {
-    type: "spring",
+    type: "spring" as const,
     stiffness: 260,
     damping: 28,
     mass: 0.9,
@@ -158,10 +158,10 @@ function NavBarResponsive() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-12">
+            <div className="hidden md:flex items-center gap-12 relative">
               {/* Animated background div */}
               <div
-                className={`absolute -top-8 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[100px] bg-black/30 rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
+                className={`absolute -top-14 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] mx-auto h-[100px] bg-black/30 rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
                   scrolled ? "-translate-y-[calc(100%)]" : "translate-y-0"
                 }`}
               />
@@ -170,8 +170,10 @@ function NavBarResponsive() {
                   <Link
                     href={item.link}
                     className={`text-[15px] font-semibold tracking-wide ${
-                      scrolled ? "text-[#334b35]" : "text-white"
-                    } hover:text-[#a2ffad]`}
+                      scrolled
+                        ? "text-[#334b35] hover:text-[#37724c]"
+                        : "text-gray-200 hover:text-[#ffffff]"
+                    } `}
                   >
                     {item.title}
                   </Link>
@@ -208,7 +210,9 @@ function NavBarResponsive() {
             {/* Mobile Toggle */}
             <button
               onClick={toggleNavbar}
-              className={`md:hidden text-xl font-bold ${scrolled ? "text-[#334b35]" : "text-white"}`}
+              className={`md:hidden text-xl font-bold ${
+                scrolled ? "text-[#334b35]" : "text-white"
+              }`}
             >
               {isClick ? "×" : "☰"}
             </button>
@@ -267,19 +271,34 @@ function NavBarResponsive() {
         </motion.div>
       </motion.nav>
 
-      {/* Hover underline */}
       <style jsx>{`
         .menu-item::after {
           content: "";
           position: absolute;
           width: 0;
-          height: 2px;
+          height: 15%;
           left: 50%;
           bottom: -6px;
-          background: #25d366;
-          transition: all 0.3s ease;
+
+          /* Glow gradient */
+          background: linear-gradient(
+            to top,
+            rgba(37, 211, 102, 1),
+            rgba(37, 211, 102, 0.6),
+            rgba(0, 0, 0, 0)
+          );
+
+          border-radius: 4px;
           transform: translateX(-50%);
+          transition: all 0.3s ease;
+
+          /* Glow effect */
+          box-shadow: 0 0 8px rgba(37, 211, 102, 0.8),
+            0 0 16px rgba(37, 211, 102, 0.6), 0 0 24px rgba(37, 211, 102, 0.4);
+
+          filter: blur(0.5px);
         }
+
         .menu-item:hover::after {
           width: 100%;
         }

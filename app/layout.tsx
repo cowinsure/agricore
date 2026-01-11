@@ -8,8 +8,8 @@ import {
 import "./globals.css";
 import Footer from "@/components/Helper/Footer";
 import NavBarResponsive from "@/components/Helper/NavBarResponsive";
-import LoadingProvider from "@/components/Helper/LoadingProvider";
 import LenisProvider from "@/utils/LenisProvider";
+import LoadingProvider from "@/components/Helper/LoadingProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,7 +39,9 @@ export default function RootLayout({
       <body className={` ${poppins.className} antialiased bg-[#F6F4EC]/90`}>
         <NavBarResponsive />
         <LoadingProvider>
-          <LenisProvider>{children}</LenisProvider>
+          <LenisProvider>
+            <div className="h-screen">{children}</div>
+          </LenisProvider>
         </LoadingProvider>
         <Footer />
       </body>

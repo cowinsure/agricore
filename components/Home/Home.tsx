@@ -73,28 +73,11 @@ const Home = () => {
   return (
     <div className=" lg:h-auto w-auto h-auto overflow-hidden">
       {/* Hero Section */}
-
-      {/* <section className=" h-auto flex items-center justify-center "> */}
-      {/* Background Image */}
-      {/* <Image
-          src={herobg2}
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          priority
-        /> */}
-      {/* <Carousel slides={slides} /> */}
-
       <div className="h-screen">
         <SwiperComponent />
       </div>
 
-      {/* Cards at the end, overflow effect */}
-
-      {/* </section> */}
-
       {/* Section 2 - About Us */}
-
       <section className=" max-[767px]:mt-20 mb-10 mx-auto flex flex:row items-center justify-center p-2">
         <AboutUsSection />
       </section>
@@ -103,19 +86,13 @@ const Home = () => {
         <CardsSection />
       </div>
 
-      {/* <ServiceHighlighted url='/about_us' image={bannerGenereal} title='Our Mission' description={mission} reverse/>
-      <ServiceHighlighted url='/about_us' image={bannerGenereal} title='Our Vision' description={vision} /> */}
-
       <HomeVedioBanner />
 
       {/* insurance section */}
       <HomeInsuranceSection />
 
       {/* Section 3 - Services */}
-      {/* <HomeInvestmentSection /> */}
       <InvestmentSection />
-
-      {/* <CowPurchaseSection /> */}
 
       <div className="my-20">
         <WhyInvestWithUs />
@@ -150,8 +127,6 @@ const Home = () => {
       </BannerGeneral>
 
       {/* Loan Section */}
-      {/* <HomeLoanSection/> */}
-
       <AwardRecognitionSection />
 
       <PartnerAndInvestorSection />
@@ -171,8 +146,6 @@ const Home = () => {
       <div className="py-16 bg-[#F6F4EC] ">
         <ContactUs />
       </div>
-
-      {/* Section 4 - Contact Us */}
     </div>
   );
 };

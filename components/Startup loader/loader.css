@@ -1,0 +1,128 @@
+/* Fullscreen loader wrapper */
+.loader {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5) inset,
+    0 5px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  /* Centering */
+  margin: auto;
+
+  /* Smooth entrance */
+  opacity: 0;
+  animation: loaderIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards 1s,
+    float 3.5s ease-in-out infinite 1.9s;
+}
+
+/* Sphere waves */
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 45%;
+  top: -40%;
+  background-color: #034f05;
+  animation: wave 5s linear infinite;
+}
+
+.loader:before {
+  border-radius: 30%;
+  background: rgba(122, 122, 122, 0.4);
+  animation: wave 5s linear infinite;
+}
+
+/* Fullscreen background */
+.loader::selection {
+  background: transparent;
+}
+
+body:has(.loader) {
+  overflow: hidden;
+}
+
+/* Wrapper for fullscreen */
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #077234 0%, #04431e 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  animation: bgIn 500ms ease-out forwards;
+}
+
+/* Exit animation */
+.loader-wrapper.fade-out {
+  animation: bgOut 0.7s ease-in forwards;
+}
+
+.loader-wrapper.fade-out .loader {
+  animation: loaderOut 0.6s ease-in forwards;
+}
+
+/* ================= Animations ================= */
+
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes loaderOut {
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bgIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes bgOut {
+  to {
+    opacity: 0;
+    filter: blur(20px);
+  }
+}
