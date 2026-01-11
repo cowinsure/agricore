@@ -2,8 +2,8 @@ import React from "react";
 // import Image from 'next/image';
 // import google from '../../public/googleplay.svg';
 // import apple from '../../public/appstore.png';
-import { CiLinkedin } from "react-icons/ci";
-import { FaFacebookSquare } from "react-icons/fa";
+// import { CiLinkedin } from "react-icons/ci";
+// import { FaFacebookSquare } from "react-icons/fa";
 // import { FaXTwitter } from "react-icons/fa6";
 // import { FaYoutube } from "react-icons/fa";
 // import { FaSquareInstagram } from "react-icons/fa6";
@@ -22,24 +22,24 @@ const Footer = () => {
             Bangladesh Office: House 117, Road 5, Block B, Niketon, Dhaka,
             Bangladesh
           </p>
-          <p className="mt-3 text-gray-600">
+          <p className="mt-3 text-gray-600 text-left">
             Singapore Office: 192 Waterloo St. #05-03 Skyline, Singapore 187966
           </p>
 
           {/* Social Icons */}
           <div className="flex gap-3 mt-4">
-            <a
+            {/* <a
               href="https://www.linkedin.com/company/insurecow/"
               className="p-1 bg-black text-white rounded"
             >
               <CiLinkedin className="text-2xl" />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.facebook.com/share/1P4UStavgY/"
               className="p-2 bg-black text-white rounded"
             >
               <FaFacebookSquare />
-            </a>
+            </a> */}
             {/* <a href="#" className="p-2 bg-black text-white rounded">
            <FaXTwitter/>
           </a>
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col gap-5 mt-5">
+          <div className="flex flex-col gap-5 mt-5 text-left">
             <div className="mr-5">
               <p className="text-gray-600">info@agricore.com</p>
               <p className="text-gray-600">+8801999INSURE</p>

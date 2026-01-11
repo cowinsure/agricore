@@ -11,7 +11,7 @@ import Link from "next/link";
 // import { HiMiniArrowLongLeft } from "react-icons/hi2";
 import { gsap } from "gsap";
 import type { Swiper as SwiperType } from "swiper";
-import 'animate.css';
+import "animate.css";
 
 interface SliderData {
   id: number;
@@ -189,7 +189,10 @@ const SwiperComponent = () => {
   // }
 
   return (
-    <div ref={containerRef} className="relative w-full lg:h-[100vh] animate__animated animate__fadeIn">
+    <div
+      ref={containerRef}
+      className="relative w-full lg:h-[100vh] animate__animated animate__fadeIn"
+    >
       {/* Navigation Buttons */}
       {/* <div className="absolute right-4 top-10 lg:right-16 lg:top-10 z-40 flex gap-3 lg:flex-col">
         <button
@@ -293,16 +296,16 @@ const SwiperComponent = () => {
       {/* Statistics Section - Now properly responsive */}
       <div
         ref={statsRef}
-        className="relative mt-[-150] lg:mt-[-80] min-[768px]:mt-[-64] z-10 px-4 md:px-8 lg:px-20 opacity-0"
+        className="relative mt-[-70] lg:mt-[-80] min-[768px]:mt-[-64] z-10 px-4 md:px-8 lg:px-20 opacity-0"
       >
         <div className="bg-[#F6F4EC] rounded-lg shadow-lg overflow-hidden lg:max-w-[1450px] lg:h-40 mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-5 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-6 h-full">
             {/* Farmers Impacted */}
-            <div className="p-6 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
+            <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Crop Farmers
               </h3>
-              <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 23,300+
               </p>
               {/* <small className="text-sm text-green-700/70">
@@ -310,11 +313,11 @@ const SwiperComponent = () => {
               </small> */}
             </div>
             {/* Farmers Impacted */}
-            <div className="p-6 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
+            <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Cattle Farmers
               </h3>
-              <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 11,000+
               </p>
               {/* <small className="text-sm text-green-700/70">
@@ -323,11 +326,11 @@ const SwiperComponent = () => {
             </div>
 
             {/* Livestock Registered */}
-            <div className="p-6 text-center border-b md:border-b-0 lg:border-r border-gray-200 flex flex-col items-center justify-center">
+            <div className="p-4 text-center border-b md:border-b-0 lg:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Livestock Registered
               </h3>
-              <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 22,500+
               </p>
               {/* <small className="text-sm text-green-700/70">
@@ -336,23 +339,34 @@ const SwiperComponent = () => {
             </div>
 
             {/* Fraudulent Claims */}
-            <div className="p-6 text-center border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col items-center justify-center">
+            <div className="p-4 text-center border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Land Digitized
               </h3>
-              <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 3,000+
               </p>
               {/* <small className="text-sm text-green-700/70">False Claims</small> */}
             </div>
 
             {/* Capacity Building */}
-            <div className="p-6 text-center flex flex-col items-center justify-center">
+            <div className="p-4 text-center flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Capacity Building
               </h3>
-              <p className="text-2xl lg:text-4xl text-green-950/70 font-semibold">
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 2,000+
+              </p>
+              {/* <small className="text-sm text-green-700/70">Farmers Trained</small> */}
+            </div>
+
+            {/* Capacity Building */}
+            <div className="p-4 text-center flex flex-col items-center justify-center">
+              <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
+                Fraudulant Claims
+              </h3>
+              <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
+                0
               </p>
               {/* <small className="text-sm text-green-700/70">Farmers Trained</small> */}
             </div>

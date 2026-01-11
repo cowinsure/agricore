@@ -32,6 +32,14 @@ function NavBarResponsive() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const toggleNavbar = () => setClick(!isClick);
 
@@ -108,7 +116,7 @@ function NavBarResponsive() {
       >
         <motion.div
           animate={{
-            borderRadius: scrolled ? "9999px" : "0px",
+            borderRadius: scrolled ? (isMobile ? "18px" : "9999px") : "0px",
             paddingLeft: scrolled ? "6px" : "0px",
             paddingRight: scrolled ? "6px" : "0px",
             boxShadow: scrolled ? "0 20px 40px rgba(0,0,0,0.12)" : "",
@@ -226,7 +234,7 @@ function NavBarResponsive() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.25 }}
-                className="md:hidden bg-[#F6F4EC] border-t border-black/10"
+                className="md:hidden bg-[#F6F4EC] border rounded-lg"
               >
                 <div className="px-6 py-6 space-y-6">
                   {menuData.map((item) => (

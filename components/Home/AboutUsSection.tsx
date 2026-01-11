@@ -312,7 +312,7 @@ const AboutUsSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="pl-2 pr-2 flex-1 w-full lg:w-1/2 text-start">
+          <div className="pl-2 pr-2 flex-1 w-full lg:w-1/2 text-start mt-10 md:mt-0">
             <div
               ref={(el) => {
                 iconRefs.current[index] = el;
