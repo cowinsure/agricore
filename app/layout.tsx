@@ -6,7 +6,7 @@ import {
   Poppins,
 } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Helper/Footer";
+
 import NavBarResponsive from "@/components/Helper/NavBarResponsive";
 import LenisProvider from "@/utils/LenisProvider";
 import LoadingProvider from "@/components/Helper/LoadingProvider";
@@ -40,10 +40,10 @@ export default function RootLayout({
         <NavBarResponsive />
         <LoadingProvider>
           <LenisProvider>
-            <div className="h-screen">{children}</div>
+            <div className="">{children}</div>
           </LenisProvider>
         </LoadingProvider>
-        <Footer />
+
       </body>
     </html>
   );

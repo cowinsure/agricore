@@ -23,6 +23,7 @@ import PartnerAndInvestorSection from "../Helper/PartnerAndInvestorSection";
 // import bannerGenereal from '../../public/back-view-of-filipino-local-farmers-2025-01-07-23-27-27-utc.jpg';
 // import CowPurchaseSection from '../Project/cowSellProject/CowPurchaseSection';
 import InvestmentSection from "../Helper/InvestmentSection";
+import Footer from "../Helper/Footer";
 // import HomeInvestmentSection from './HomeInvestmentSection';
 
 // Testing git
@@ -71,7 +72,7 @@ const Home = () => {
   // const vision  = "Our vision is to ensure that smallholder farmers in emerging economies have access to financial services, cutting-edge technology, and essential information, fostering a sustainable and prosperous agricultural sector."
 
   return (
-    <div className=" lg:h-auto w-auto h-auto overflow-hidden">
+    <div className=" lg:h-auto w-auto overflow-hidden">
       {/* Hero Section */}
       <div className="h-screen">
         <SwiperComponent />
@@ -146,6 +147,8 @@ const Home = () => {
       <div className="py-16 bg-[#F6F4EC] ">
         <ContactUs />
       </div>
+
+      <Footer />
     </div>
   );
 };

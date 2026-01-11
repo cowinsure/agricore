@@ -1,6 +1,4 @@
-"use client";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import Image from 'next/image';
 // import google from '../../public/googleplay.svg';
 // import apple from '../../public/appstore.png';
@@ -9,10 +7,11 @@ import { FaFacebookSquare } from "react-icons/fa";
 // import { FaXTwitter } from "react-icons/fa6";
 // import { FaYoutube } from "react-icons/fa";
 // import { FaSquareInstagram } from "react-icons/fa6";
+import "animate.css";
 
 const Footer = () => {
   return (
-    <footer className={`bg-white text-gray-800 py-10 px-6 md:px-16`}>
+    <footer className="bg-white text-gray-800 py-10 px-6 md:px-16 animate__animated animate__bounce animate__delay-2s">
       <div className=" flex flex-col justify-start lg:justify-around  lg:flex-row ">
         {/* Left Section - Company Info */}
         <div>
@@ -29,18 +28,18 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-3 mt-4">
-            {/* <a
+            <a
               href="https://www.linkedin.com/company/insurecow/"
               className="p-1 bg-black text-white rounded"
             >
               <CiLinkedin className="text-2xl" />
-            </a> */}
-            {/* <a
+            </a>
+            <a
               href="https://www.facebook.com/share/1P4UStavgY/"
               className="p-2 bg-black text-white rounded"
             >
               <FaFacebookSquare />
-            </a> */}
+            </a>
             {/* <a href="#" className="p-2 bg-black text-white rounded">
            <FaXTwitter/>
           </a>
@@ -55,8 +54,8 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="flex flex-col gap-5 mt-5">
             <div className="mr-5">
-              <p className="text-gray-600">info@agricore.asia</p>
-              {/* <p className="text-gray-600">+8801999INSURE</p> */}
+              <p className="text-gray-600">info@agricore.com</p>
+              <p className="text-gray-600">+8801999INSURE</p>
             </div>
             <div>
               <p className="text-gray-600">Helpline </p>
