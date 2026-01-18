@@ -3,7 +3,7 @@ import HealthInsuranceForm from "@/components/HealthInsurance/HealthInsuranceFor
 import React from "react";
 import inspection from "../../../public/livestockinsuranceimg.jpg";
 import Image from "next/image";
-import FaqSection from "@/components/Home/FaqSection";
+// import FaqSection from "@/components/Home/FaqSection";
 
 import { motion } from "framer-motion";
 import { GiBullHorns } from "react-icons/gi";

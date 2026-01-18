@@ -23,7 +23,7 @@ import PartnerAndInvestorSection from "../Helper/PartnerAndInvestorSection";
 // import bannerGenereal from '../../public/back-view-of-filipino-local-farmers-2025-01-07-23-27-27-utc.jpg';
 // import CowPurchaseSection from '../Project/cowSellProject/CowPurchaseSection';
 import InvestmentSection from "../Helper/InvestmentSection";
-import Footer from "../Helper/Footer";
+// import Footer from "../Helper/Footer";
 // import HomeInvestmentSection from './HomeInvestmentSection';
 
 // Testing git

@@ -4,7 +4,7 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 // import banner from "../../public/farmers-with.jpg";
 import bannerGenereal from "../../public/farmerfieldimg.jpeg";
 import bannerGenereal2 from "../../public/back-view-of-filipino-local-farmers-2025-01-07-23-27-27-utc.jpg";
-import FaqSection from "@/components/Home/FaqSection";
+// import FaqSection from "@/components/Home/FaqSection";
 import ContactUs from "@/components/Helper/ContactUs";
 import CoreValueSection from "@/components/AboutPage/CoreValueSection";
 import BannerGeneral from "@/components/Home/BannerGeneral";

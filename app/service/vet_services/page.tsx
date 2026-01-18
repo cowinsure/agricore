@@ -11,10 +11,10 @@ import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import FaqSectionStatic from "@/components/service/Vet services/StaticFAQ";
-interface Faq {
-  question: string;
-  answer: string;
-}
+// interface Faq {
+//   question: string;
+//   answer: string;
+// }
 
 interface ApiResponse {
   status: string;
