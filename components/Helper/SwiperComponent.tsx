@@ -43,7 +43,7 @@ const SwiperComponent = () => {
     const fetchSliderData = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/slider/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/slider/`,
         );
         const result: ApiResponse = await response.json();
         if (result.status === "success") {
@@ -89,7 +89,7 @@ const SwiperComponent = () => {
             duration: 1.5,
             ease: "power2.out",
             delay: 2,
-          }
+          },
         );
 
         // Initialize all slides with proper starting positions
@@ -149,7 +149,7 @@ const SwiperComponent = () => {
               duration: 1.5,
               ease: "power2.out",
             },
-            "-=0.5"
+            "-=0.5",
           )
           .to(
             buttonElement,
@@ -159,7 +159,7 @@ const SwiperComponent = () => {
               duration: 0.8,
               ease: "back.out(1.7)",
             },
-            "-=0.8"
+            "-=0.8",
           );
       });
       return ctx;
@@ -176,17 +176,6 @@ const SwiperComponent = () => {
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex);
   };
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="relative w-full h-[80vh] flex items-center justify-center bg-gray-900">
-  //       <div className="text-center">
-  //         <div className="w-8 h-8 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-  //         <p className="text-white">Loading slides...</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div
@@ -299,8 +288,7 @@ const SwiperComponent = () => {
         className="relative mt-[-70] lg:mt-[-80] min-[768px]:mt-[-64] z-50 px-4 md:px-8 lg:px-20 opacity-0"
       >
         <div className="bg-[#F6F4EC] rounded-lg shadow-lg overflow-hidden lg:max-w-[1450px] lg:h-40 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-6 h-full">
-         
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 h-full">
             {/* Farmers Impacted */}
             <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
@@ -317,7 +305,7 @@ const SwiperComponent = () => {
             {/* Livestock Registered */}
             <div className="p-4 text-center border-b md:border-b-0 lg:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
-                Livestock Registered
+                Cattles Registered
               </h3>
               <p className="text-2xl lg:text-3xl text-green-950/70 font-semibold">
                 24,500+
@@ -327,7 +315,7 @@ const SwiperComponent = () => {
               </small> */}
             </div>
 
-               {/* Farmers Impacted */}
+            {/* Farmers Impacted */}
             <div className="p-4 text-center border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Crop Farmers

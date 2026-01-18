@@ -61,13 +61,13 @@ function InvestNow() {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/categories/`,
         );
         const result: CategoryApiResponse = await response.json();
         if (result.status === "success") {
           setCategories(result.data);
           const cowSellCategory = result.data.find(
-            (category) => category.name === "Short Term Investment"
+            (category) => category.name === "Short Term Investment",
           );
           if (cowSellCategory) {
             fetchPortfolios(cowSellCategory.id);
@@ -82,7 +82,7 @@ function InvestNow() {
     const fetchPortfolios = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/category/${categoryId}/portfolios/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/category/${categoryId}/portfolios/`,
         );
 
         const result: ApiResponse = await response.json();
@@ -139,7 +139,7 @@ function InvestNow() {
 
                 {/* STATUS */}
                 {portfolio.extra_data.isSold && (
-                  <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-amber-500 text-black">
+                  <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-green-500 text-black">
                     Completed
                   </span>
                 )}
@@ -160,7 +160,7 @@ function InvestNow() {
 
                   <div className="text-right">
                     <p className="text-xs text-slate-400">Investment</p>
-                    <p className="text-2xl font-bold text-amber-400 tracking-tight">
+                    <p className="text-2xl font-bold text-green-400 tracking-tight">
                       {formatToBDT(parseInt(portfolio.investment_value))}
                     </p>
                   </div>
@@ -179,7 +179,7 @@ function InvestNow() {
                   <StatRow
                     label="Total Return"
                     value={`${formatToBDT(
-                      parseInt(portfolio.total_return_min)
+                      parseInt(portfolio.total_return_min),
                     )} – ${formatToBDT(parseInt(portfolio.total_return_max))}`}
                   />
                   <StatRow label="Currency" value={portfolio.currency} />
@@ -191,7 +191,7 @@ function InvestNow() {
                     href={`/project/project_details/${portfolio.id}`}
                     className="mt-auto"
                   >
-                    <button className="w-full mt-6 py-3 rounded-xl bg-amber-500 text-black font-semibold tracking-wide transition-all duration-300 hover:bg-amber-400 hover:shadow-lg">
+                    <button className="w-full mt-6 py-3 rounded-xl bg-green-500 text-black font-semibold tracking-wide transition-all duration-300 hover:bg-green-400 hover:shadow-lg">
                       View Project →
                     </button>
                   </Link>

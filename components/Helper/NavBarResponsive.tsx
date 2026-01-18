@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { Headset } from "lucide-react";
 
 interface LogoData {
   id: number;
@@ -68,7 +68,7 @@ function NavBarResponsive() {
     const fetchLogoData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/logo/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/logo/`,
         );
         const result = await res.json();
         if (result.status === "success") setLogoData(result.data);
@@ -80,7 +80,7 @@ function NavBarResponsive() {
     const fetchMenuData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/menu/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/menu/`,
         );
         const result: ApiResponse = await res.json();
         if (result.status === "success") setMenuData(result.data);
@@ -166,7 +166,7 @@ function NavBarResponsive() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-12 relative">
+            <div className="hidden lg:flex items-center gap-12 relative">
               {/* Animated background div */}
               <div
                 className={`absolute -top-14 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] mx-auto h-[100px] bg-black/30 rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
@@ -209,16 +209,16 @@ function NavBarResponsive() {
               href="https://wa.me/8801999467873"
               target="_blank"
               className="ml-4 px-5 py-2 rounded-full bg-[#002b10] text-[#25D366] text-sm font-semibold
-                hover:scale-105 transition shadow-md hidden md:flex items-center gap-1"
+                hover:scale-105 transition shadow-md hidden lg:flex items-center gap-2"
             >
-              <FaWhatsapp size={25} />
-              <span className="">Get In Touch</span>
+              <Headset size={25} />
+              <span className="">Get Vet Service</span>
             </Link>
 
             {/* Mobile Toggle */}
             <button
               onClick={toggleNavbar}
-              className={`md:hidden text-xl font-bold ${
+              className={`lg:hidden text-xl font-bold ${
                 scrolled ? "text-[#334b35]" : "text-white"
               }`}
             >
@@ -234,7 +234,7 @@ function NavBarResponsive() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.25 }}
-                className="md:hidden bg-[#F6F4EC] border rounded-lg"
+                className="lg:hidden bg-[#F6F4EC] border rounded-lg"
               >
                 <div className="px-6 py-6 space-y-6">
                   {menuData.map((item) => (
@@ -301,8 +301,10 @@ function NavBarResponsive() {
           transition: all 0.3s ease;
 
           /* Glow effect */
-          box-shadow: 0 0 8px rgba(37, 211, 102, 0.8),
-            0 0 16px rgba(37, 211, 102, 0.6), 0 0 24px rgba(37, 211, 102, 0.4);
+          box-shadow:
+            0 0 8px rgba(37, 211, 102, 0.8),
+            0 0 16px rgba(37, 211, 102, 0.6),
+            0 0 24px rgba(37, 211, 102, 0.4);
 
           filter: blur(0.5px);
         }

@@ -8,7 +8,7 @@ import {
 import "./globals.css";
 
 import NavBarResponsive from "@/components/Helper/NavBarResponsive";
-import LenisProvider from "@/utils/LenisProvider";
+// import LenisProvider from "@/utils/LenisProvider";
 import LoadingProvider from "@/components/Helper/LoadingProvider";
 
 const poppins = Poppins({
@@ -39,11 +39,10 @@ export default function RootLayout({
       <body className={` ${poppins.className} antialiased bg-[#F6F4EC]/90`}>
         <NavBarResponsive />
         <LoadingProvider>
-          <LenisProvider>
-            <div className="">{children}</div>
-          </LenisProvider>
+          {/* <LenisProvider> */}
+          <div>{children}</div>
+          {/* </LenisProvider> */}
         </LoadingProvider>
-
       </body>
     </html>
   );

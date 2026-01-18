@@ -67,12 +67,12 @@ const AboutUsSection: React.FC = () => {
     const fetchBaseCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`,
         );
         const result: BaseCategoryApiResponse = await response.json();
         if (result.status === "success") {
           const AboutUsCategory = result.data.find(
-            (category) => category.name === "About Us - Home Section"
+            (category) => category.name === "About Us - Home Section",
           );
           if (AboutUsCategory) {
             fetchBaseCards(AboutUsCategory.id);
@@ -87,7 +87,7 @@ const AboutUsSection: React.FC = () => {
     const fetchBaseCards = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`,
         );
         const result: BaseCardApiResponse = await response.json();
         if (result.status === "success") {
@@ -145,7 +145,7 @@ const AboutUsSection: React.FC = () => {
               {
                 y: -50,
                 opacity: 0,
-              }
+              },
             );
 
             // Create timeline with scroll trigger
@@ -176,7 +176,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "power2.out",
               },
-              "-=0.8"
+              "-=0.8",
             );
 
             // Subtitle animation - falls from top
@@ -188,7 +188,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "power2.out",
               },
-              "-=0.6"
+              "-=0.6",
             );
 
             // Title animation - falls from top
@@ -200,7 +200,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "power2.out",
               },
-              "-=0.6"
+              "-=0.6",
             );
 
             // Heading animation - falls from top
@@ -212,7 +212,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "power2.out",
               },
-              "-=0.6"
+              "-=0.6",
             );
 
             // Description animation - falls from top
@@ -224,7 +224,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "power2.out",
               },
-              "-=0.6"
+              "-=0.6",
             );
 
             // Button animation - falls from top
@@ -236,7 +236,7 @@ const AboutUsSection: React.FC = () => {
                 opacity: 1,
                 ease: "back.out(1.7)",
               },
-              "-=0.4"
+              "-=0.4",
             );
 
             // Add hover animation for image
@@ -279,44 +279,19 @@ const AboutUsSection: React.FC = () => {
   }
 
   return (
-    <div ref={containerRef} className="lg:min-h-[600px] relative">
+    <div ref={containerRef} className=" relative lg:mt-32">
       <BackgroundImageLayer imageUrl="/village2.png" opacity={0.08} />
       {aboutUsData.map((item, index) => (
         <div
           key={index}
-          className="about-section-item flex flex-col lg:flex-row lg:justify-around md:flex-col w-full lg:pt-8 min-[768px]:mt-[150px] lg:mt-28"
+          className="about-section-item max-w-[90%] mx-auto lg:max-w-[1450px]"
         >
-          <div
-            ref={(el) => {
-              imageRefs.current[index] = el;
-            }}
-            className="flex-1 w-full lg:w-1/2 flex justify-center lg:justify-center items-center relative"
-          >
-            <div className="relative px-10">
-              <div className="relative z-30 h-[300px] w-[300px] lg:h-[500px] lg:w-[500px] overflow-hidden border-gray-300 rounded-[5px] group">
-                <div className="image-inner w-full h-full">
-                  <Image
-                    src={item.image_url || "/placeholder.svg"}
-                    alt={item.name}
-                    height={500}
-                    width={500}
-                    className="w-full h-full rounded-md object-cover"
-                    unoptimized
-                    priority
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="absolute w-0 h-full bg-white bg-opacity-20 transform group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pl-2 pr-2 flex-1 w-full lg:w-1/2 text-start mt-10 md:mt-0">
+          <div className="mb-5">
             <div
               ref={(el) => {
                 iconRefs.current[index] = el;
               }}
+              className="flex items-center justify-center"
             >
               <GiBullHorns className="w-auto text-3xl text-green-700 mb-3 pl-2 pr-2" />
             </div>
@@ -338,40 +313,65 @@ const AboutUsSection: React.FC = () => {
             >
               {item.name}
             </h2>
-
-            <p
+          </div>
+          <div className="lg:text-left flex flex-col lg:flex-row lg:justify-center items-center gap-10 ">
+            {/* Image */}
+            <div
               ref={(el) => {
-                headingRefs.current[index] = el;
+                imageRefs.current[index] = el;
               }}
-              className="mt-5 pl-2 pr-2 text-xl text-[#687469]"
             >
-              {item.extra_data.heading}
-            </p>
-
-            <p
-              ref={(el) => {
-                descriptionRefs.current[index] = el;
-              }}
-              className="space-y-3 mb-8 pt-5 pl-2 pr-2 text-[18px] text-[#334b35] tracking-normal"
-            >
-              {item.extra_data.description.replace(/Insurecow/g, "Agricore")}
-            </p>
-
-            <div className="flex items-center pl-2 pr-2">
-              <Link
+              <div className="relative z-30 h-[300px] w-[300px] lg:h-[500px] lg:w-[500px] overflow-hidden border-gray-300 rounded-[5px] group">
+                <div className="image-inner w-full h-full">
+                  <Image
+                    src={item.image_url || "/placeholder.svg"}
+                    alt={item.name}
+                    height={500}
+                    width={500}
+                    className="w-full h-full rounded-md object-cover"
+                    unoptimized
+                    priority
+                  />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute w-0 h-full bg-white bg-opacity-20 transform group-hover:w-full transition-all duration-500 ease-in-out"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p
                 ref={(el) => {
-                  buttonRefs.current[index] = el;
+                  headingRefs.current[index] = el;
                 }}
-                // href="/about_us#about"
-                href="/about_us_section"
-                scroll={true}
-                className="relative text-center p-3 lg:w-[150px] lg:h-[50px] bg-green-300 text-green-800 font-semibold rounded-md overflow-hidden group cursor-pointer flex items-center justify-center"
+                className="mt-5 pl-2 pr-2 text-xl text-[#687469]"
               >
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Learn more
-                </span>
-                <div className="absolute inset-0 bg-green-800 transform -translate-x-[-145px] group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
-              </Link>
+                {item.extra_data.heading}
+              </p>
+
+              <p
+                ref={(el) => {
+                  descriptionRefs.current[index] = el;
+                }}
+                className="space-y-3 mb-8 pt-5 pl-2 pr-2 text-[18px] text-[#334b35] tracking-normal"
+              >
+                {item.extra_data.description.replace(/Insurecow/g, "Agricore")}
+              </p>
+
+              <div className="flex items-center justify-center lg:justify-start pl-2 pr-2">
+                <Link
+                  ref={(el) => {
+                    buttonRefs.current[index] = el;
+                  }}
+                  href="/about_us_section"
+                  scroll={true}
+                  className="relative text-center p-3 lg:w-[150px] lg:h-[50px] bg-green-300 text-green-800 font-semibold rounded-md overflow-hidden group cursor-pointer flex items-center justify-center"
+                >
+                  <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                    Learn more
+                  </span>
+                  <div className="absolute inset-0 bg-green-800 transform -translate-x-[-145px] group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
