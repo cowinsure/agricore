@@ -7,6 +7,7 @@ import FaqSection from "@/components/Home/FaqSection";
 
 import { motion } from "framer-motion";
 import { GiBullHorns } from "react-icons/gi";
+import FaqSectionStatic from "@/components/service/Vet services/StaticFAQ";
 
 function page() {
   return (
@@ -54,8 +55,56 @@ function page() {
         </div>
       </div>
 
-      <div className="mt-11 bg-[#F6F4EC]">
+      {/* <div className="mt-11 bg-[#F6F4EC]">
         <FaqSection />
+      </div> */}
+
+            <div className="text-center bg-[#F6F4EC]">
+       <FaqSectionStatic
+  faqs={[
+    {
+      question: "What is health insurance?",
+      answer:
+        "Health insurance is a financial protection plan that helps cover medical expenses such as doctor visits, hospitalization, surgery, and medicines, reducing your out-of-pocket costs.",
+    },
+    {
+      question: "Who can apply for health insurance in Bangladesh?",
+      answer:
+        "Most health insurance plans in Bangladesh are available for individuals, families, and corporate employees. Eligibility usually depends on age limits and basic health conditions.",
+    },
+    {
+      question: "What medical expenses are covered?",
+      answer:
+        "Coverage typically includes hospitalization, surgeries, ICU charges, diagnostic tests, ambulance services, and sometimes outpatient consultations, depending on the policy.",
+    },
+    {
+      question: "Are pre-existing diseases covered?",
+      answer:
+        "Pre-existing conditions are usually covered after a waiting period, which varies by insurance provider and policy terms.",
+    },
+    {
+      question: "How does cashless hospitalization work?",
+      answer:
+        "With cashless hospitalization, you can receive treatment at network hospitals without paying upfront. The insurance company directly settles the bill with the hospital.",
+    },
+    {
+      question: "What documents are required to make a claim?",
+      answer:
+        "Commonly required documents include hospital bills, medical reports, prescriptions, discharge summaries, and a completed claim form.",
+    },
+    {
+      question: "Is health insurance mandatory in Bangladesh?",
+      answer:
+        "Currently, health insurance is not mandatory in Bangladesh, but it is highly recommended to manage rising healthcare costs.",
+    },
+    {
+      question: "How do I renew my health insurance policy?",
+      answer:
+        "You can renew your policy annually by paying the renewal premium before the expiry date to ensure uninterrupted coverage.",
+    },
+  ]}
+/>
+
       </div>
     </div>
   );

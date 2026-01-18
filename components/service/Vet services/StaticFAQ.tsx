@@ -6,50 +6,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import village from "../../../public/village.png";
 import BackgroundImageLayer from "@/components/common/BackgroundImageLayer";
 import SectionHeading from "@/components/SectionHeading";
+import { vetFAQs, Faq } from "../../../data/vetFAQs";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface Faq {
-  question: string;
-  answer: string;
+interface Props {
+  faqs: Faq[];
 }
 
-const STATIC_FAQS: Faq[] = [
-  {
-    question: "What services does AgriCore provide?",
-    answer:
-      "We provide a full range of veterinary services including routine check-ups, vaccinations, emergency care, and nutritional advice for your livestock.",
-  },
-  {
-    question: "How do I book an appointment?",
-    answer:
-      "You can book an appointment by calling our clinic directly or using the online booking form available on our website.",
-  },
-  {
-    question: "Do you provide on-site veterinary services?",
-    answer:
-      "Yes, our veterinarians can visit your farm or location to provide treatment and check-ups as needed.",
-  },
-  {
-    question: "What are your operating hours?",
-    answer:
-      "Our clinic is open Monday to Friday from 8:00 AM to 6:00 PM, and Saturday from 9:00 AM to 2:00 PM.",
-  },
-  {
-    question: "What should I bring to my pet's appointment?",
-    answer:
-      "Please bring any previous medical records, vaccination history, and a list of current medications your animal is taking.",
-  },
-  {
-    question: "How can I get advice in an emergency?",
-    answer:
-      "For urgent situations, please call our emergency hotline. Our team is trained to provide immediate guidance and assistance.",
-  },
-];
-
-const FaqSectionStatic: React.FC = () => {
+const FaqSectionStatic: React.FC<Props> = ({ faqs = vetFAQs.data }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -151,7 +118,7 @@ const FaqSectionStatic: React.FC = () => {
         <SectionHeading title="Frequently Asked Questions" />
 
         <ul className="space-y-6 max-w-4xl mx-auto">
-          {STATIC_FAQS.map((faq, index) => (
+          {faqs.map((faq, index) => (
             <li
               key={index}
               ref={(el) => {

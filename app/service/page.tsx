@@ -85,9 +85,9 @@ function page() {
           {/* insurance section */}
           <HomeInsuranceSection />
 
-          <div className='text-center'>
+          {/* <div className='text-center'>
         <FaqSection/>
-      </div>
+      </div> */}
 
       <div className='text-center bg-[#F6F4EC]'>
         <ContactUs/>

@@ -48,11 +48,11 @@ function Imapct() {
         </div>
       </BannerGeneral> */}
 
-      <div className='text-center bg-[#F6F4EC]'>
+      {/* <div className='text-center bg-[#F6F4EC]'>
 
       <FaqSection/>
 
-      </div>
+      </div> */}
 
       
     </div>

@@ -8,6 +8,7 @@ import FaqSection from "@/components/Home/FaqSection";
 import LiveStockInsuranceForm from "@/components/livestock/LiveStockInsuranceForm";
 import { motion } from "framer-motion";
 import { GiBullHorns } from "react-icons/gi";
+import FaqSectionStatic from "@/components/service/Vet services/StaticFAQ";
 
 const LiveStock = () => {
   return (
@@ -56,7 +57,58 @@ const LiveStock = () => {
       </div>
 
       <div className="mt-11 bg-[#F6F4EC]">
-        <FaqSection />
+        {/* <FaqSection /> */}
+        <FaqSectionStatic
+  faqs={[
+    {
+      question: "What is livestock insurance?",
+      answer:
+        "Livestock insurance provides financial protection to farmers and livestock owners against the loss or damage of animals due to disease, accidents, natural disasters, or death.",
+    },
+    {
+      question: "Which animals can be insured?",
+      answer:
+        "Commonly insured animals in Bangladesh include cows, buffaloes, goats, sheep, and poultry. Coverage depends on the insurance provider’s policy.",
+    },
+    {
+      question: "What risks are covered under livestock insurance?",
+      answer:
+        "Coverage usually includes death due to disease, accidents, natural calamities (flood, cyclone, fire), and sometimes theft, depending on the policy terms.",
+    },
+    {
+      question: "How is the insurance premium calculated?",
+      answer:
+        "The premium is calculated based on the animal’s market value, age, health condition, and type of livestock being insured.",
+    },
+    {
+      question: "What documents are required to insure livestock?",
+      answer:
+        "Typically required documents include farmer’s ID, livestock ownership proof, animal health certificate, photographs of the animal, and vaccination records.",
+    },
+    {
+      question: "How do I apply for livestock insurance?",
+      answer:
+        "You can apply through registered insurance providers, agricultural organizations, cooperatives, or digital platforms offering livestock insurance services.",
+    },
+    {
+      question: "How do I make a claim?",
+      answer:
+        "To make a claim, notify the insurance provider immediately, submit required documents, veterinary reports, and photographs, and complete the claim form.",
+    },
+    {
+      question: "What is the claim settlement process?",
+      answer:
+        "After verification by the insurance provider and veterinary inspection, the claim amount is paid to the farmer according to the policy coverage.",
+    },
+    {
+      question: "Is livestock insurance mandatory in Bangladesh?",
+      answer:
+        "Livestock insurance is not mandatory in Bangladesh, but it is strongly recommended to protect farmers from financial loss.",
+    },
+  ]}
+/>
+
+
       </div>
     </div>
   );

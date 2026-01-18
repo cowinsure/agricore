@@ -148,7 +148,7 @@ const Home = () => {
         <ContactUs />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

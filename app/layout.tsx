@@ -10,6 +10,7 @@ import "./globals.css";
 import NavBarResponsive from "@/components/Helper/NavBarResponsive";
 // import LenisProvider from "@/utils/LenisProvider";
 import LoadingProvider from "@/components/Helper/LoadingProvider";
+import Footer from "@/components/Helper/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
         <LoadingProvider>
           {/* <LenisProvider> */}
           <div>{children}</div>
+          <Footer />
           {/* </LenisProvider> */}
         </LoadingProvider>
       </body>

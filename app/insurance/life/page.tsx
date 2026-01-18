@@ -8,6 +8,7 @@ import FaqSection from '@/components/Home/FaqSection';
 import { motion } from 'framer-motion';
 import { GiBullHorns } from 'react-icons/gi'
 import LifeInsuranceForm from '@/components/lifeInsurance/LifeInsuranceComponent';
+import FaqSectionStatic from '@/components/service/Vet services/StaticFAQ';
 
 const LifeInsurance = () => {
     return (
@@ -58,7 +59,57 @@ const LifeInsurance = () => {
 
             <div className='mt-11 bg-[#F6F4EC]'>
 
-            <FaqSection />
+            {/* <FaqSection /> */}
+            <FaqSectionStatic
+  faqs={[
+    {
+      question: "What is life insurance?",
+      answer:
+        "Life insurance is a financial protection plan that provides financial support to your family or nominees in case of your death during the policy term.",
+    },
+    {
+      question: "Who can buy life insurance in Bangladesh?",
+      answer:
+        "Any Bangladeshi citizen within the eligible age range set by the insurer can purchase life insurance, subject to basic health and income criteria.",
+    },
+    {
+      question: "What types of life insurance are available?",
+      answer:
+        "Common types include term life insurance, endowment plans, whole life insurance, and money-back policies.",
+    },
+    {
+      question: "What benefits does life insurance provide?",
+      answer:
+        "Life insurance provides death benefits, maturity benefits (for some plans), financial security for dependents, and long-term savings support.",
+    },
+    {
+      question: "Who will receive the insurance money?",
+      answer:
+        "The insurance benefit is paid to the nominee(s) specified by the policyholder in the event of death or at maturity, depending on the policy.",
+    },
+    {
+      question: "How is the life insurance premium calculated?",
+      answer:
+        "Premiums are calculated based on age, policy term, coverage amount, health condition, occupation, and lifestyle factors.",
+    },
+    {
+      question: "What documents are required to buy life insurance?",
+      answer:
+        "Generally required documents include a national ID, age proof, income details, photographs, and a completed application form.",
+    },
+    {
+      question: "What is the policy term?",
+      answer:
+        "The policy term is the duration for which the life insurance coverage remains active, commonly ranging from 5 to 30 years.",
+    },
+    {
+      question: "Is life insurance mandatory in Bangladesh?",
+      answer:
+        "Life insurance is not mandatory in Bangladesh, but it is highly recommended to ensure financial protection for your family.",
+    },
+  ]}
+/>
+
             </div>
         </div>
     )
