@@ -255,7 +255,7 @@ const AboutUs: React.FC = () => {
   }, [aboutUsData]);
 
   return (
-    <div className=" lg:h-auto h-auto overflow-x-hidden">
+    <div className="">
       {/* <AppBranding
         title="Stronger Together, Enriching Farmers' Future!"
         bannerUrl={banner}

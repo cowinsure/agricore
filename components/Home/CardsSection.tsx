@@ -63,12 +63,12 @@ const CardsSection: React.FC = () => {
     const fetchBaseCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`,
         );
         const result: BaseCategoryApiResponse = await response.json();
         if (result.status === "success") {
           const whatWeOfferCategory = result.data.find(
-            (category) => category.name === "What We Offer - Home Section"
+            (category) => category.name === "What We Offer - Home Section",
           );
           if (whatWeOfferCategory) {
             await fetchBaseCards(whatWeOfferCategory.id);
@@ -87,7 +87,7 @@ const CardsSection: React.FC = () => {
     const fetchBaseCards = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`,
         );
         const result: BaseCardApiResponse = await response.json();
         if (result.status === "success") {
@@ -156,7 +156,7 @@ const CardsSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Title animation - falls from top
@@ -169,7 +169,7 @@ const CardsSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Cards container animation - slides from left
@@ -181,7 +181,7 @@ const CardsSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
 
         // Individual cards animation - staggered appearance
@@ -198,7 +198,7 @@ const CardsSection: React.FC = () => {
               from: "start", // Start from first card
             },
           },
-          "-=0.5"
+          "-=0.5",
         );
       }, containerRef);
 
@@ -209,7 +209,11 @@ const CardsSection: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-[700px] relative flex items-center justify-center">
-      <BackgroundImageLayer imageUrl='/village3.png' opacity={0.1} size="80%"/>
+        <BackgroundImageLayer
+          imageUrl="/village3.png"
+          opacity={0.1}
+          size="80%"
+        />
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600">Loading services...</p>
@@ -220,67 +224,73 @@ const CardsSection: React.FC = () => {
 
   return (
     <div ref={containerRef} className="relative py-10">
-      <BackgroundImageLayer imageUrl='/village3.png' opacity={0.1} size="80%"/>
-      <div className="flex flex-col justify-center items-center text-center w-full pt-10 mb-10">
-        <div ref={iconRef}>
-          <GiBullHorns className="lg:w-auto w-full text-2xl text-start text-green-700 mb-2" />
+      <BackgroundImageLayer imageUrl="/village3.png" opacity={0.1} size="80%" />
+      <div className="max-w-[1450px] mx-auto">
+        <div className="flex flex-col justify-center items-center text-center w-full pt-10 mb-10">
+          <div ref={iconRef}>
+            <GiBullHorns className="lg:w-auto w-full text-2xl text-start text-green-700 mb-2" />
+          </div>
+          <h2
+            ref={subtitleRef}
+            className="text-xl font-bold text-[#687469] text-start mb-3"
+          >
+            Services
+          </h2>
+          <h1
+            ref={titleRef}
+            className="lg:text-5xl text-2xl min-w-[150px] font-bold text-[#334b35] text-start"
+          >
+            What we offer
+          </h1>
         </div>
-        <h2
-          ref={subtitleRef}
-          className="text-xl font-bold text-[#687469] text-start mb-3"
+
+        <div
+          ref={cardsContainerRef}
+          className="p-5 min-h-[300px] h-auto lg:h-auto flex justify-center items-center overflow-auto lg:items-center lg:justify-center flex-col mt-14 mb-20 lg:mt-14 lg:mb-20 lg:flex-row w-full lg:w-auto gap-8 lg:px-24"
         >
-          Services
-        </h2>
-        <h1
-          ref={titleRef}
-          className="lg:text-5xl text-2xl min-w-[150px] font-bold text-[#334b35] text-start"
-        >
-          What we offer
-        </h1>
-      </div>
+          {whatWeOfferData.length > 0 ? (
+            whatWeOfferData.map((item, index) => (
+              <Link
+                href={item.extra_data.url}
+                key={index}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                className="rounded-md relative h-[300px] lg:h-[300px] w-full group cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              >
+                <Image
+                  src={item.image_url || "/placeholder.svg"}
+                  alt={item.name}
+                  fill
+                  className="rounded-lg object-cover"
+                />
 
-      <div
-        ref={cardsContainerRef}
-        className="p-5 min-h-[300px] h-auto lg:h-auto flex justify-center items-center overflow-auto lg:items-center lg:justify-center flex-col mt-14 mb-20 lg:mt-14 lg:mb-20 lg:flex-row w-full lg:w-auto gap-8 lg:px-24 max-w-[86%] mx-auto"
-      >
-        {whatWeOfferData.length > 0 ? (
-          whatWeOfferData.map((item, index) => (
-            <Link
-              href={item.extra_data.url}
-              key={index}
-              ref={(el) => {cardRefs.current[index] = el}}
-              className="rounded-md relative h-[300px] lg:h-[300px] w-full group cursor-pointer transform transition-transform duration-300 hover:scale-105"
-            >
-              <Image
-                src={item.image_url || "/placeholder.svg"}
-                alt={item.name}
-                fill
-                className="rounded-lg object-cover"
-              />
+                <div className="absolute inset-0 rounded-lg group-hover:bg-black/50 transition duration-500 bg-black/20 flex justify-start items-start"></div>
 
-              <div className="absolute inset-0 rounded-lg group-hover:bg-black/50 transition duration-500 bg-black/20 flex justify-start items-start"></div>
-
-              <div className="absolute inset-0 lg:bottom-10 flex justify-center items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-green-900 text-white p-4 rounded-lg cursor-pointer transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  Learn More
+                <div className="absolute inset-0 lg:bottom-10 flex justify-center items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-green-900 text-white p-4 rounded-lg cursor-pointer transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    Learn More
+                  </div>
                 </div>
-              </div>
 
-              <div className="absolute inset-0 top-16 left-10 rounded-lg bg-opacity-50 flex justify-start items-start">
-                <div className="flex flex-col space-y-4 text-start group-hover:opacity-15 transition-opacity duration-300">
-                  <h2 className="text-white text-xl font-light italic">
-                    {item.extra_data.heading}
-                  </h2>
-                  <h2 className="text-white text-2xl lg:text-3xl font-bold">
-                    {item.name}
-                  </h2>
+                <div className="absolute inset-0 top-16 left-10 rounded-lg bg-opacity-50 flex justify-start items-start">
+                  <div className="flex flex-col space-y-4 text-start group-hover:opacity-15 transition-opacity duration-300">
+                    <h2 className="text-white text-xl font-light italic">
+                      {item.extra_data.heading}
+                    </h2>
+                    <h2 className="text-white text-2xl lg:text-3xl font-bold">
+                      {item.name}
+                    </h2>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))
-        ) : (
-          <div className="text-gray-400 text-center">No services available</div>
-        )}
+              </Link>
+            ))
+          ) : (
+            <div className="text-gray-400 text-center">
+              No services available
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

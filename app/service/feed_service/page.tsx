@@ -93,10 +93,11 @@ const FeedService = () => {
       </BannerGeneral>
 
       {/* Our Products Section */}
-      <section className="max-w-[1350px] mx-auto px-6 py-10 bg-green-50 rounded-2xl lg:mt-32">
+      <section className="max-w-[1350px] mx-auto lg:mt-32">
         <SectionHeading title="Our Products" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 px-10">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 px-10 rounded-2xl py-10">
           {products.map((product, index) => (
             <div
               key={index}
