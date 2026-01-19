@@ -6,10 +6,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { Autoplay, Navigation } from "swiper/modules";
-import { GiBullHorns } from "react-icons/gi";
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SectionHeading from "../SectionHeading";
 // import BackgroundImageLayer from "../common/BackgroundImageLayer";
 
 if (typeof window !== "undefined") {
@@ -66,12 +66,12 @@ const AwardRecognitionSection = () => {
     const fetchBaseCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`,
         );
         const result: BaseCategoryApiResponse = await response.json();
         if (result.status === "success") {
           const partnersCategory = result.data.find(
-            (category) => category.name === "Award"
+            (category) => category.name === "Award",
           );
           if (partnersCategory) {
             fetchBaseCards(partnersCategory.id);
@@ -90,7 +90,7 @@ const AwardRecognitionSection = () => {
     const fetchBaseCards = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`,
         );
         const result: BaseCardApiResponse = await response.json();
         if (result.status === "success") {
@@ -158,7 +158,7 @@ const AwardRecognitionSection = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Title animation - falls from top
@@ -171,7 +171,7 @@ const AwardRecognitionSection = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Swiper container animation - slides from left
@@ -183,7 +183,7 @@ const AwardRecognitionSection = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
 
         // Individual cards animation - staggered appearance
@@ -200,7 +200,7 @@ const AwardRecognitionSection = () => {
               from: "start", // Start from first card
             },
           },
-          "-=0.5"
+          "-=0.5",
         );
       }, containerRef);
 
@@ -222,25 +222,17 @@ const AwardRecognitionSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative flex flex-col mt-10 justify-center items-center lg:flex-col lg:justify-center lg:items-center w-full lg:h-[600px] h-auto p-5"
+      className="relative flex flex-col mt-20 justify-center items-center lg:flex-col lg:justify-center lg:items-center w-full lg:h-[600px] h-auto p-5"
     >
       {/* <BackgroundImageLayer imageUrl="/farm.png" size="80%" position="bottom"/> */}
       <div className="flex-1 flex flex-col justify-center items-center max-w-4xl text-center w-full max-[1023px]:mb-5">
-        <div ref={iconRef}>
-          <GiBullHorns className="lg:w-auto w-full text-2xl text-start text-green-700 mb-2" />
-        </div>
-        <h2
-          ref={subtitleRef}
-          className="text-xl font-bold text-[#687469] text-start mb-3"
-        >
-          achivements
-        </h2>
-        <h1
-          ref={titleRef}
-          className="lg:text-5xl text-2xl min-w-[150px] font-bold text-[#334b35] text-start"
-        >
-          Awards & Recognitions
-        </h1>
+        <SectionHeading
+          title="Awards & Recognitions"
+          subtitle="achivements"
+          iconRef={iconRef}
+          subtitleRef={subtitleRef}
+          titleRef={titleRef}
+        />
       </div>
       <div ref={swiperRef} className="w-[98%]">
         <Swiper

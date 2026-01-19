@@ -39,7 +39,7 @@ const FaqSection: React.FC = () => {
     const fetchFaqs = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/faqs/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/faqs/`,
         );
         const result: ApiResponse = await response.json();
         if (result.status === "success") {
@@ -99,7 +99,7 @@ const FaqSection: React.FC = () => {
             ease: "power2.out",
             stagger: 0.3,
           },
-          "-=0.5"
+          "-=0.5",
         );
       }, sectionRef);
 
@@ -212,10 +212,13 @@ const FaqSection: React.FC = () => {
               className="border-b border-gray-200 pb-6 opacity-0"
             >
               <button
-                className="w-full text-left text-xl lg:text-2xl font-semibold text-[#334b35] hover:text-green-700 transition-colors duration-300 flex justify-between items-center group"
+                className="w-full text-left text-lg lg:text-2xl font-semibold text-[#334b35] hover:text-green-700 transition-colors duration-300 flex justify-between items-center group"
                 onClick={() => toggleExpand(index)}
               >
-                <span className="pr-4">  {faq.question.replace(/InsureCow/g, "AgriCore")}</span>
+                <span className="pr-4">
+                  {" "}
+                  {faq.question.replace(/InsureCow/g, "AgriCore")}
+                </span>
                 <span
                   className={`text-2xl transition-transform duration-300 ${
                     expandedIndex === index ? "rotate-45" : "rotate-0"

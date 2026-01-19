@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import type React from "react";
-import { GiBullHorns } from "react-icons/gi";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundImageLayer from "../common/BackgroundImageLayer";
+import SectionHeading from "../SectionHeading";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -63,12 +63,12 @@ const HomeInsuranceSection: React.FC = () => {
     const fetchBaseCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-categories/`,
         );
         const result: BaseCategoryApiResponse = await response.json();
         if (result.status === "success") {
           const insuranceSectionCategory = result.data.find(
-            (category) => category.name === "Insurance Preview Section"
+            (category) => category.name === "Insurance Preview Section",
           );
           if (insuranceSectionCategory) {
             await fetchBaseCards(insuranceSectionCategory.id);
@@ -87,7 +87,7 @@ const HomeInsuranceSection: React.FC = () => {
     const fetchBaseCards = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/base-category/${categoryId}/base-cards/`,
         );
         const result: BaseCardApiResponse = await response.json();
         if (result.status === "success") {
@@ -156,7 +156,7 @@ const HomeInsuranceSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Title animation - falls from top
@@ -169,7 +169,7 @@ const HomeInsuranceSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         // Cards container animation - slides from left
@@ -181,7 +181,7 @@ const HomeInsuranceSection: React.FC = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
 
         // Individual cards animation - staggered appearance
@@ -198,7 +198,7 @@ const HomeInsuranceSection: React.FC = () => {
               from: "start", // Start from first card
             },
           },
-          "-=0.5"
+          "-=0.5",
         );
       }, containerRef);
 
@@ -224,30 +224,19 @@ const HomeInsuranceSection: React.FC = () => {
       className="relative pt-[10vh] pb-[10vh] h-auto lg:h-screen flex flex-col lg:flex-col lg:items-center items-center justify-center bg-white"
     >
       <BackgroundImageLayer imageUrl="/insuranceBG.png" size="70%" />
-      <div className="max-w-4xl text-center">
-        <div ref={iconRef}>
-          <GiBullHorns className="w-full lg:text-3xl text-xl text-center text-green-700 mb-2" />
-        </div>
-
-        <div>
-          <h2
-            ref={subtitleRef}
-            className="text-sm lg:text-xl font-bold text-[#687469] mb-2"
-          >
-            Digital Insurance Solutions
-          </h2>
-          <h1
-            ref={titleRef}
-            className="lg:text-5xl text-3xl font-bold text-[#334b35]"
-          >
-            Simply compare, order, and get covered
-          </h1>
-        </div>
+      <div className="max-w-[1450px] mx-auto">
+        <SectionHeading
+          title="Simply compare, order, and get covered"
+          subtitle="Digital Insurance Solutions"
+          iconRef={iconRef}
+          subtitleRef={subtitleRef}
+          titleRef={titleRef}
+        />
       </div>
 
       <div
         ref={cardsContainerRef}
-        className="mt-10 min-w-[76%] h-auto mx-auto flex flex-col gap-4 md:flex-row lg:flex-row items-center justify-center mb-5 "
+        className="lg:mt-10 w-full lg:max-w-[76%] h-auto mx-auto flex flex-col gap-4 md:flex-row lg:flex-row items-center justify-center mb-5 p-5"
       >
         {insuranceSection.map((item, index) => (
           <div

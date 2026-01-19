@@ -3,10 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import type React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GiBullHorns } from "react-icons/gi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundImageLayer from "../common/BackgroundImageLayer";
+import SectionHeading from "../SectionHeading";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -225,28 +225,20 @@ const CardsSection: React.FC = () => {
   return (
     <div ref={containerRef} className="relative py-10">
       <BackgroundImageLayer imageUrl="/village3.png" opacity={0.1} size="80%" />
-      <div className="max-w-[1450px] mx-auto">
-        <div className="flex flex-col justify-center items-center text-center w-full pt-10 mb-10">
-          <div ref={iconRef}>
-            <GiBullHorns className="lg:w-auto w-full text-2xl text-start text-green-700 mb-2" />
-          </div>
-          <h2
-            ref={subtitleRef}
-            className="text-xl font-bold text-[#687469] text-start mb-3"
-          >
-            Services
-          </h2>
-          <h1
-            ref={titleRef}
-            className="lg:text-5xl text-2xl min-w-[150px] font-bold text-[#334b35] text-start"
-          >
-            What we offer
-          </h1>
+      <div className="lg:max-w-[86%] mx-auto">
+        <div className="flex flex-col justify-center items-center text-center w-full pt-10 lg:mb-10">
+          <SectionHeading
+            title="What We Offer"
+            subtitle="Services"
+            iconRef={iconRef}
+            subtitleRef={subtitleRef}
+            titleRef={titleRef}
+          />
         </div>
 
         <div
           ref={cardsContainerRef}
-          className="p-5 min-h-[300px] h-auto lg:h-auto flex justify-center items-center overflow-auto lg:items-center lg:justify-center flex-col mt-14 mb-20 lg:mt-14 lg:mb-20 lg:flex-row w-full lg:w-auto gap-8 lg:px-24"
+          className="p-5 min-h-[300px] h-auto lg:h-auto flex justify-center items-center overflow-auto lg:items-center lg:justify-center flex-col mb-20 lg:mt-14 lg:mb-20 lg:flex-row w-full lg:w-auto gap-8 lg:px-24"
         >
           {whatWeOfferData.length > 0 ? (
             whatWeOfferData.map((item, index) => (
@@ -256,7 +248,7 @@ const CardsSection: React.FC = () => {
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}
-                className="rounded-md relative h-[300px] lg:h-[300px] w-full group cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                className="rounded-md relative h-[300px] lg:h-[300px] w-full group cursor-pointer transform transition-transform duration-300 hover:scale-105 overflow-hidden"
               >
                 <Image
                   src={item.image_url || "/placeholder.svg"}
@@ -265,22 +257,25 @@ const CardsSection: React.FC = () => {
                   className="rounded-lg object-cover"
                 />
 
-                <div className="absolute inset-0 rounded-lg group-hover:bg-black/50 transition duration-500 bg-black/20 flex justify-start items-start"></div>
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 rounded-lg bg-black/30 group-hover:bg-black/60 transition duration-500" />
 
-                <div className="absolute inset-0 lg:bottom-10 flex justify-center items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-green-900 text-white p-4 rounded-lg cursor-pointer transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    Learn More
-                  </div>
-                </div>
+                {/* Centered Text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                  <h2 className="text-white text-sm sm:text-base md:text-lg italic font-light mb-2 transition-opacity duration-300 group-hover:opacity-30">
+                    {item.extra_data.heading}
+                  </h2>
 
-                <div className="absolute inset-0 top-16 left-10 rounded-lg bg-opacity-50 flex justify-start items-start">
-                  <div className="flex flex-col space-y-4 text-start group-hover:opacity-15 transition-opacity duration-300">
-                    <h2 className="text-white text-xl font-light italic">
-                      {item.extra_data.heading}
-                    </h2>
-                    <h2 className="text-white text-2xl lg:text-3xl font-bold">
-                      {item.name}
-                    </h2>
+                  <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 transition-opacity duration-300 group-hover:opacity-30">
+                    {item.name}
+                  </h2>
+
+                  {/* Fancy Button */}
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-300">
+                    <div className="relative inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base font-semibold text-white rounded-full bg-gradient-to-r from-green-600 to-emerald-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                      <span className="relative z-10">Explore More</span>
+                      <span className="absolute inset-0 rounded-full bg-white/10 blur-md"></span>
+                    </div>
                   </div>
                 </div>
               </Link>

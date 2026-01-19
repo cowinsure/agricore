@@ -8,11 +8,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { Autoplay, Navigation } from "swiper/modules";
-import { GiBullHorns } from "react-icons/gi";
-// import Link from 'next/link';
-// import insureCow2 from '../../public/insurancecow.svg';
 import { useRef } from "react";
 import { HiMiniArrowLongLeft } from "react-icons/hi2";
+import SectionHeading from "../SectionHeading";
 
 interface Testimonial {
   id: number;
@@ -40,7 +38,7 @@ const FeedbackSlider = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonials/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonials/`,
         );
         const result: TestimonialApiResponse = await response.json();
         if (result.status === "success") {
@@ -57,15 +55,10 @@ const FeedbackSlider = () => {
   return (
     <div className=" container mx-auto flex flex-col justify-center items-center lg:flex-row lg:justify-between lg:items-center  w-full lg:h-[70vh] h-auto p-5">
       <div className=" flex-1 flex flex-col justify-center items-center lg:max-w-4xl text-center">
-        <GiBullHorns className="lg:w-auto w-full  text-2xl text-start text-green-700 mb-2" />
-
-        <h2 className="text-xl font-bold text-[#687469] text-start mb-3">
-          Our Testimonials
-        </h2>
-        <h1 className="lg:text-5xl min-w-[150px] font-bold text-[#334b35] mb-10 text-start">
-          What They’re Talking About AgriCore
-        </h1>
-
+        <SectionHeading
+          title="What They’re Talking About AgriCore"
+          subtitle="Our Testimonials"
+        />
         <div className="flex gap-3 mb-10">
           <button
             ref={nextRef}
