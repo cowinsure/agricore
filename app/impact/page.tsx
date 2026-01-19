@@ -4,7 +4,7 @@ import AppBranding from '@/components/Project/AppBranding';
 import ImpactHighlightSection from '@/components/impact/ImpactHighlightSection';
 import SDGImapctSection from '@/components/impact/SDGImapctSection';
 import FeaturedNewsSection from '@/components/impact/FeaturedNewsSection';
-import FaqSection from '@/components/Home/FaqSection';
+// import FaqSection from '@/components/Home/FaqSection';
 
 
 

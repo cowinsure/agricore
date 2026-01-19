@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import FaqSection from "@/components/Home/FaqSection";
+// import FaqSection from "@/components/Home/FaqSection";
 import { useParams } from "next/navigation";
 
 import { formatToBDT } from "@/utils/currencyFormatter";
