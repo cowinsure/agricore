@@ -227,7 +227,7 @@ const SwiperComponent = () => {
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           modules={[EffectFade, Navigation, Pagination, Autoplay]}
-          className="w-full h-[80vh] md:h-[70vh] lg:h-[90vh] bg-black"
+          className="w-full h-[90vh] md:h-[90vh] lg:h-[90vh] bg-black"
         >
           {sliderData.map((slide, index) => (
             <SwiperSlide key={slide.id}>
@@ -242,7 +242,7 @@ const SwiperComponent = () => {
                 />
 
                 {/* Overlay Content */}
-                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-4 pb-20">
+                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-2 md:px-4 md:pb-20">
                   <p
                     ref={(el) => {
                       titleRefs.current[index] = el;
@@ -258,7 +258,7 @@ const SwiperComponent = () => {
                     }}
                     className="h-1 bg-white mb-8 opacity-0"
                   />
-
+                  {/* Button */}
                   <div
                     ref={(el) => {
                       buttonRefs.current[index] = el;
@@ -267,7 +267,7 @@ const SwiperComponent = () => {
                   >
                     <Link
                       href="/project"
-                      className="relative inline-flex items-center justify-center px-8 py-4 bg-green-300 text-green-800 font-bold text-lg rounded-md overflow-hidden group transition-all duration-300 hover:scale-105 shadow-lg"
+                      className="relative inline-flex items-center justify-center px-5 py-2 md:px-8 md:py-4 bg-green-300 text-green-800 font-bold md:text-lg rounded-md overflow-hidden group transition-all duration-300 hover:scale-105 shadow-lg"
                     >
                       <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                         Discover Now
@@ -340,7 +340,7 @@ const SwiperComponent = () => {
             </div>
 
             {/* Capacity Building */}
-            <div className="p-4 text-center flex flex-col items-center justify-center">
+            <div className="p-4 text-center flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-gray-200 ">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Capacity Building
               </h3>
@@ -350,7 +350,7 @@ const SwiperComponent = () => {
               {/* <small className="text-sm text-green-700/70">Farmers Trained</small> */}
             </div>
 
-            {/* Capacity Building */}
+            {/* Fraudulant Claims */}
             <div className="p-4 text-center flex flex-col items-center justify-center">
               <h3 className="font-normal text-lg lg:text-xl text-green-700/70 mb-2">
                 Fraudulant Claims

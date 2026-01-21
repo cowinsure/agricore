@@ -3,11 +3,11 @@ import { useEffect, useState, useRef } from "react";
 import type React from "react";
 
 import Image from "next/image";
-import { GiBullHorns } from "react-icons/gi";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundImageLayer from "../common/BackgroundImageLayer";
+import SectionHeading from "../SectionHeading";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -279,7 +279,7 @@ const AboutUsSection: React.FC = () => {
   }
 
   return (
-    <div ref={containerRef} className=" relative lg:mt-32">
+    <div ref={containerRef} className=" relative md:mt-44 lg:mt-32">
       <BackgroundImageLayer imageUrl="/village2.png" opacity={0.08} />
       {aboutUsData.map((item, index) => (
         <div
@@ -287,34 +287,9 @@ const AboutUsSection: React.FC = () => {
           className="about-section-item max-w-[90%] mx-auto lg:max-w-[1450px]"
         >
           <div className="mb-5">
-            <div
-              ref={(el) => {
-                iconRefs.current[index] = el;
-              }}
-              className="flex items-center justify-center"
-            >
-              <GiBullHorns className="w-auto text-3xl text-green-700 mb-3 pl-2 pr-2" />
-            </div>
-
-            <span
-              ref={(el) => {
-                subtitleRefs.current[index] = el;
-              }}
-              className="pl-2 pr-2 text-sm text-[#687469] uppercase font-semibold"
-            >
-              get to know about us
-            </span>
-
-            <h2
-              ref={(el) => {
-                titleRefs.current[index] = el;
-              }}
-              className="text-4xl lg:text-5xl font-bold text-[#334b35] mt-2 max-w- pl-2 pr-2 leading-8"
-            >
-              {item.name}
-            </h2>
+            <SectionHeading title={item.name} subtitle="get to know about us" />
           </div>
-          <div className="lg:text-left flex flex-col lg:flex-row lg:justify-center items-center gap-10 ">
+          <div className="lg:text-left flex flex-col lg:flex-row lg:justify-center items-center lg:gap-10 ">
             {/* Image */}
             <div
               ref={(el) => {
@@ -343,7 +318,7 @@ const AboutUsSection: React.FC = () => {
                 ref={(el) => {
                   headingRefs.current[index] = el;
                 }}
-                className="mt-5 pl-2 pr-2 text-xl text-[#687469]"
+                className="mt-5 text-lg text-[#687469]"
               >
                 {item.extra_data.heading}
               </p>
@@ -352,7 +327,7 @@ const AboutUsSection: React.FC = () => {
                 ref={(el) => {
                   descriptionRefs.current[index] = el;
                 }}
-                className="space-y-3 mb-8 pt-5 pl-2 pr-2 text-[18px] text-[#334b35] tracking-normal"
+                className="space-y-3 mb-8 pt-5 text-[16px] text-[#334b35] tracking-normal text-left"
               >
                 {item.extra_data.description.replace(/Insurecow/g, "Agricore")}
               </p>

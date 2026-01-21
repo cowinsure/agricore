@@ -6,11 +6,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { Autoplay, Navigation } from "swiper/modules";
-import { GiBullHorns } from "react-icons/gi";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import BackgroundImageLayer from "../common/BackgroundImageLayer";
 import farm from "@/public/Farm.png";
+import SectionHeading from "../SectionHeading";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +46,7 @@ const GallerySection = () => {
     const fetchGalleryData = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/gallery/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/gallery/`,
         );
         const result: ApiResponse = await response.json();
         if (result.status === "success") {
@@ -101,7 +101,7 @@ const GallerySection = () => {
             delay: 0.5,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
         tl.to(
           titleRef.current,
@@ -112,7 +112,7 @@ const GallerySection = () => {
             delay: 0.5,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
 
         tl.to(
@@ -123,7 +123,7 @@ const GallerySection = () => {
             opacity: 1,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         );
         tl.to(
           cardRefs.current,
@@ -138,7 +138,7 @@ const GallerySection = () => {
               from: "start", // Start from first card
             },
           },
-          "-=0.5"
+          "-=0.5",
         );
       }, containerRef);
       return () => ctx.revert();
@@ -182,24 +182,16 @@ const GallerySection = () => {
         size="70%"
       />
       <div className="flex-1 flex flex-col justify-center items-center max-w-4xl text-center w-full">
-        <div ref={iconRef}>
-          <GiBullHorns className="lg:w-auto w-full text-2xl text-start text-green-700 mb-2" />
-        </div>
-        <h2
-          ref={subtitleRef}
-          className="text-xl font-bold text-[#687469] text-start mb-3"
-        >
-          organic food
-        </h2>
-        <h1
-          ref={titleRef}
-          className="lg:text-5xl text-2xl min-w-[150px] font-bold text-[#334b35] mb-10 text-start"
-        >
-          Watch Our Gallery
-        </h1>
+        <SectionHeading
+          title="Watch Our Gallery"
+          subtitle="organic food"
+          iconRef={iconRef}
+          subtitleRef={subtitleRef}
+          titleRef={titleRef}
+        />
       </div>
 
-      <div ref={swiperRef} className="max-[767px]:w-[85%] w-full mt-10 mb-20">
+      <div ref={swiperRef} className=" w-full lg:mt-10 mb-20">
         <Swiper
           breakpoints={{
             640: { slidesPerView: 1 },

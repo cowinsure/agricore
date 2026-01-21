@@ -145,7 +145,7 @@ function NavBarResponsive() {
             <div className="relative flex items-center">
               {/* SVG Blob */}
               <div
-                className={`absolute -left-5 -top-16 lg:-top-12 -z-10 w-[160px] h-[100px] bg-[#F6F4EC] skew-x-[20deg] rounded-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`absolute -left-12 md:-left-5 -top-16 lg:-top-12 -z-10 w-[160px] h-[100px] bg-[#F6F4EC] skew-x-[20deg] rounded-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   scrolled ? "-translate-y-40" : "translate-y-0"
                 }`}
               />
@@ -157,7 +157,7 @@ function NavBarResponsive() {
                     alt={logoData.name}
                     width={140}
                     height={60}
-                    className="object-contain h-6 lg:h-9 -ml-1"
+                    className="object-contain h-6 lg:h-9 -ml-3 md:-ml-1"
                     priority
                     unoptimized
                   />
@@ -218,7 +218,7 @@ function NavBarResponsive() {
             {/* Mobile Toggle */}
             <button
               onClick={toggleNavbar}
-              className={`lg:hidden text-xl font-bold ${
+              className={`lg:hidden text-2xl font-bold mr-2 ${
                 scrolled ? "text-[#334b35]" : "text-white"
               }`}
             >

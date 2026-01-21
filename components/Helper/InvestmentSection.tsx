@@ -4,15 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import { FaArrowRightLong } from "react-icons/fa6";
-
 import { Autoplay, Navigation } from "swiper/modules";
-import { GiBullHorns } from "react-icons/gi";
-
 import Image from "next/image";
 import Link from "next/link";
 import { formatToBDT } from "@/utils/currencyFormatter";
 import { CiLocationOn } from "react-icons/ci";
+import SectionHeading from "../SectionHeading";
 
 interface ExtraData {
   isSold: boolean;
@@ -64,13 +61,13 @@ const InvestmentSection = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/categories/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/categories/`,
         );
         const result: CategoryApiResponse = await response.json();
         if (result.status === "success") {
           // setCategories(result.data);
           const cowSellCategory = result.data.find(
-            (category) => category.name === "Short Term Investment"
+            (category) => category.name === "Short Term Investment",
           );
           if (cowSellCategory) {
             fetchPortfolios(cowSellCategory.id);
@@ -85,7 +82,7 @@ const InvestmentSection = () => {
     const fetchPortfolios = async (categoryId: string) => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/category/${categoryId}/portfolios/`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio/category/${categoryId}/portfolios/`,
         );
 
         const result: ApiResponse = await response.json();
@@ -114,15 +111,12 @@ const InvestmentSection = () => {
   }
 
   return (
-    <section className="pb-10 px-5 h-auto lg:h-auto  flex flex-col  lg:flex-col lg:justify-start  lg:items-center items-center justify-center bg-[#F6F4EC] pt-32 lg:pt-10">
+    <section className="pb-10 px-5 h-auto lg:h-auto flex flex-col lg:flex-col lg:justify-start lg:items-center items-center justify-center bg-[#F6F4EC] pt-10">
       <div className="max-w-4xl text-center">
-        <GiBullHorns className="w-full text-3xl text-center text-green-700 mb-3" />
-
-        <h2 className="text-xl font-bold text-[#687469]">Invest Now</h2>
-        <h1 className="text-5xl font-bold text-[#334b35]">Our Projects</h1>
+        <SectionHeading title="Our Projects" subtitle="Invest Now" />
       </div>
 
-      <div className="mt-10 h-auto container mx-auto flex flex-col gap-4 lg:flex-row items-center justify-center mb-5 lg:max-w-[77%]">
+      <div className="lg:mt-10 h-auto container mx-auto flex flex-col gap-4 lg:flex-row items-center justify-center mb-5 lg:max-w-[77%]">
         <Swiper
           centeredSlides={true}
           slidesPerView={1}
@@ -201,9 +195,9 @@ const InvestmentSection = () => {
                     <StatRow
                       label="Total Return"
                       value={`${formatToBDT(
-                        parseInt(portfolio.total_return_min)
+                        parseInt(portfolio.total_return_min),
                       )} – ${formatToBDT(
-                        parseInt(portfolio.total_return_max)
+                        parseInt(portfolio.total_return_max),
                       )}`}
                     />
                     <StatRow label="Currency" value={portfolio.currency} />
