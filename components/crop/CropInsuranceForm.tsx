@@ -46,9 +46,9 @@ const CropInsuranceForm = () => {
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [openDialog, setOpenDialog] = useState(false);
 
-  const findByLabel = (label: string) => {
-    return formFields.find((item) => item.label === label);
-  };
+  // const findByLabel = (label: string) => {
+  //   return formFields.find((item) => item.label === label);
+  // };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
