@@ -18,12 +18,12 @@ jobs:
         run: |
           if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
             echo "ENV=production" >> $GITHUB_ENV
-            echo "PORT=3012" >> $GITHUB_ENV
+            echo "PORT=3019" >> $GITHUB_ENV
             echo "TAG=frontend-agricore-prod" >> $GITHUB_ENV
             echo "COMPOSE_FILE=docker-compose.prod.yml" >> $GITHUB_ENV
           else
             echo "ENV=" >> $GITHUB_ENV
-            echo "PORT=3014" >> $GITHUB_ENV
+            echo "PORT=3020" >> $GITHUB_ENV
             echo "TAG=frontend-agricore-dev" >> $GITHUB_ENV
             echo "COMPOSE_FILE=docker-compose.dev.yml" >> $GITHUB_ENV
           fi
