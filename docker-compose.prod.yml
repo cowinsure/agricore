@@ -1,0 +1,9 @@
+services:
+  frontend-prod:
+    image: insurecow/insurecow_warehouse_repo:frontend-agricore-prod
+    container_name: frontend-agricore-prod
+    restart: always
+    ports:
+      - "3019:3000"
+    environment:
+      - NODE_ENV=production
