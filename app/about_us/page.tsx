@@ -297,6 +297,7 @@ const AboutUs: React.FC = () => {
           image={bannerGenereal2}
           title="Our Vision"
           description={vision}
+          
         />
       </div>
 
