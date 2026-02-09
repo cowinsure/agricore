@@ -299,6 +299,7 @@ const AboutUs: React.FC = () => {
           description={vision}
           
         />
+        
       </div>
 
       <div className="h-auto lg:h-auto lg:pt-10 md:h-auto bg-[#F6F4EC]">
