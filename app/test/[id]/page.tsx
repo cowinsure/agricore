@@ -8,12 +8,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import village from "@/public/village.png"
 
 interface ExtraData {
+  
   age: number;
   sex: string;
   breed: string;
   horns: string;
   colour: string;
-  
+
   isSold: boolean;
   cattleId: string;
   weightKg: number;
