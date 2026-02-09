@@ -13,6 +13,7 @@ interface ExtraData {
   breed: string;
   horns: string;
   colour: string;
+  
   isSold: boolean;
   cattleId: string;
   weightKg: number;
